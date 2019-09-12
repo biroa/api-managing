@@ -1,0 +1,19 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Test Elek1",
+      "email": "test.elek1@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Test Elek2",
+      "email": "test.elek2@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Alma3",
+      "email": "alma3@gmail.com"
+    }
+  ]
+}
