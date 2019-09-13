@@ -1,11 +1,14 @@
 var myApp = angular.module ('myApp', []);
-
-myApp.factory ("getDataService", [ "$http", "$rootScope", function ( $http, $rootScope ) {
+myApp.run (function ( $rootScope ) {
+    $rootScope.dataStore = {};
+});
+myApp.constant ('ITEM_PER_PAGE', 2);
+myApp.factory ("getDataService", [ "$http", "ITEM_PER_PAGE", function ( $http, ITEM_PER_PAGE ) {
 
     return {
         data: function ( start, end ) {
             return $http ({
-                method: 'GET', url: '/api/get-videos/' + start + '/' + end
+                method: 'GET', url: '/api/get-videos/' + start + '/' + ITEM_PER_PAGE
             }).then (function ( response ) {
                 return response.data;
             });
@@ -15,39 +18,33 @@ myApp.factory ("getDataService", [ "$http", "$rootScope", function ( $http, $roo
 } ]);
 
 
-myApp.controller ('paginateController', [ '$scope', '$http', 'getDataService', function ( $scope, $http, getDataService ) {
+myApp.controller ('paginateController', [ '$rootScope', '$scope', '$http', 'getDataService', 'ITEM_PER_PAGE', function ( $rootScope, $scope, $http, getDataService, ITEM_PER_PAGE ) {
 
-    var result = 0, start = 0;
-    var step = 5;
+    var start = 0;
     $scope.left = function () {
-        if ( result > 0 ){
-            var oldResut = result;
-            result = result + start - step;
-            $scope.dataStore = getDataService.data (oldResut, result).then (function ( data ) {
-                console.log (data);
-                $scope.dataStore = data;
+        if ( start > 0 ){
+            start = start - ITEM_PER_PAGE;
+            $scope.dataStore = {};
+            getDataService.data (start, ITEM_PER_PAGE).then (function ( data ) {
+                $rootScope.dataStore = data;
             });
-            return result;
         }
-    }
+    };
     $scope.right = function () {
-        var oldResut = result;
-        result = result + start + step;
-        $scope.dataStore = getDataService.data (oldResut, result).then (function ( data ) {
-            console.log (data);
-            $scope.dataStore = data;
+        start = start + ITEM_PER_PAGE;
+        $scope.dataStore = {};
+        getDataService.data (start, ITEM_PER_PAGE).then (function ( data ) {
+            $rootScope.dataStore = data;
         });
-        return result;
-    }
+    };
 
 } ]);
 
 
-myApp.controller ('dataController', [ '$scope', '$http', 'getDataService', function ( $scope, $http, getDataService ) {
+myApp.controller ('dataController', [ '$rootScope', '$scope', '$http', 'getDataService', 'ITEM_PER_PAGE', function ( $rootScope, $scope, $http, getDataService, ITEM_PER_PAGE ) {
 
-    getDataService.data (1, 5).then (function ( data ) {
-        console.log (data);
-        $scope.dataStore = data;
+    getDataService.data (0, ITEM_PER_PAGE).then (function ( data ) {
+        $rootScope.dataStore = data;
     })
 
 } ]);

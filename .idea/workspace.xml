@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce6f3fa2-8e77-46fe-9008-63e3af295a40" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/json/generate.js" beforeDir="false" afterPath="$PROJECT_DIR$/json/generate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/json/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/json/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/js/controller/dataController.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/js/controller/dataController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/js/directive/dataDirective.js" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/js/directive/dataDirective.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,14 +13,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/json" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -1021,7 +1022,9 @@
       <workItem from="1568219734865" duration="335000" />
       <workItem from="1568220085975" duration="2734000" />
       <workItem from="1568222870198" duration="13865000" />
-      <workItem from="1568278172519" duration="15334000" />
+      <workItem from="1568278172519" duration="16397000" />
+      <workItem from="1568371309625" duration="29000" />
+      <workItem from="1568371354645" duration="5072000" />
     </task>
     <servers />
   </component>
